@@ -1,18 +1,14 @@
 import wolframalpha
 
-inputt = input("Question: ")
-app_id = "RE5P4L-Q6UJ4QR459"
+def wolf(Q):
+    inputt = Q
+    app_id = ""  # wolframalpha app_id
+    client = wolframalpha.Client(app_id)
+    res = client.query(inputt)
+    # print(res.result)
+    try:
+        answer = (next(res.results).text)
 
-client = wolframalpha.Client(app_id)
-
-res = client.query(inputt)
-
-# print(res.result)
-
-
-try:
-
-    answer = (next(res.results).text)
-    print(answer)
-except StopIteration:
-    print("No results")
+    except StopIteration:
+        answer = ("Nothing from wolf")
+    return answer

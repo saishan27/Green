@@ -1,19 +1,26 @@
 import wikipedia as wk
 import wolframalpha
+import pyttsx3
 
-def what(Q)
-    while True:
-        inputt = Q
 
-        try:
-            app_id = "RE5P4L-Q6UJ4QR459"
+def what(inputt):
+    engine = pyttsx3.init()
 
-            client = wolframalpha.Client(app_id)
+    try:
+              app_id = "RE5P4L-Q6UJ4QR459" #use ur own app id
 
-            res = client.query(inputt)
+              client = wolframalpha.Client(app_id)
 
-            answer = (next(res.results).text)
-            print(answer)
-        except StopIteration:
+              res = client.query(inputt)
 
-            print(wk.summary(inputt, sentences=2))
+              answer ="wolf: "+(next(res.results).text)
+              engine.say("the answer is "+answer)
+              engine.runAndWait()
+    except StopIteration:
+
+              answer ="wiki: "+(wk.summary(inputt, sentences=2))
+              engine.say("wiki says"+answer)
+              engine.runAndWait()
+    return answer
+
+

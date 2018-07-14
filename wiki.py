@@ -1,7 +1,10 @@
 import wikipedia as wk
 
-input = input("Q: ")
+def wiki(Q):
+    input = Q
 
-#wk.set_lang("fr") #change language if u want
+    #wk.set_lang("fr") #change language if u want
 
-print(wk.summary(input,sentences=2))
+    return(wk.summary(input,sentences=2))
+
+print(wiki("trump"))

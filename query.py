@@ -1,7 +1,6 @@
 import wikipedia as wk
 import wolframalpha
 
-
 def what(inputt):
 
     try:

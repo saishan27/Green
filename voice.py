@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import os
 from pocketsphinx import LiveSpeech, get_model_path
+import pyaudio
 
 # obtain audio from the microphone
 def accurate_voice():

@@ -7,4 +7,4 @@ def wiki(Q):
 
     return(wk.summary(input,sentences=2))
 
-print(wiki("trump"))
+print(wiki("sheldon cooper"))

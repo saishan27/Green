@@ -1,5 +1,6 @@
 import wikipedia as wk
 import wolframalpha
+import voice
 
 def what(inputt):
 
@@ -9,6 +10,7 @@ def what(inputt):
               client = wolframalpha.Client(app_id)
 
               res = client.query(inputt)
+              res = voice.google_listen()
 
               answer ="wolf: "+(next(res.results).text)
 

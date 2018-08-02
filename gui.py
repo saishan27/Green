@@ -29,6 +29,7 @@ class MyFrame(wx.Frame):
 
 
 
+
 if __name__ == "__main__":
     app = wx.App(True)
     frame = MyFrame()

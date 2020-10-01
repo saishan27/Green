@@ -5,7 +5,10 @@ voices = engine.getProperty('voices')
 
 def check_voice():
     for voice in voices:
-        engine.setProperty('voice', voice.id)
+        print(voice)
+        print("\n")
+        x = int(input("Enter index no of voice which u want\n"))
+        engine.setProperty('voice' , voices[x].id)
         engine.say("hello world")
         print("hello wolrd",voice)
         engine.runAndWait()
